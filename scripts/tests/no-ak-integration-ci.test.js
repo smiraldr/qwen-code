@@ -416,6 +416,7 @@ describe('no-AK integration CI wiring', () => {
       'GOOGLE_API_KEY',
       'GOOGLE_MODEL',
       'IDEALAB_API_KEY',
+      'IONET_API_KEY',
       'MINIMAX_API_KEY',
       'MODELSCOPE_API_KEY',
       'MOONSHOT_API_KEY',

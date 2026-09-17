@@ -20,6 +20,7 @@ import { minimaxProvider } from './presets/minimax.js';
 import { zaiProvider } from './presets/zai.js';
 import { moonshotProvider } from './presets/moonshot.js';
 import { idealabProvider } from './presets/idealab.js';
+import { ionetProvider } from './presets/ionet.js';
 import { modelscopeProvider } from './presets/modelscope.js';
 import { customProvider } from './presets/custom-provider.js';
 
@@ -36,6 +37,7 @@ export {
   zaiProvider,
   moonshotProvider,
   idealabProvider,
+  ionetProvider,
   modelscopeProvider,
   customProvider,
 };
@@ -62,6 +64,7 @@ export const ALL_PROVIDERS: readonly ProviderConfig[] = [
   zaiProvider,
   moonshotProvider,
   idealabProvider,
+  ionetProvider,
   modelscopeProvider,
   openRouterProvider,
   requestyProvider,

@@ -52,6 +52,7 @@ export {
   getAllProviderBaseUrls,
   grokProvider,
   idealabProvider,
+  ionetProvider,
   minimaxProvider,
   modelscopeProvider,
   moonshotProvider,
@@ -75,6 +76,7 @@ export {
   TOKEN_PLAN_GLOBAL_BASE_URL,
 } from './presets/alibaba-token-plan.js';
 export { GROK_BASE_URL, GROK_ENV_KEY } from './presets/grok.js';
+export { IONET_BASE_URL, IONET_ENV_KEY } from './presets/ionet.js';
 export {
   OPENROUTER_BASE_URL,
   OPENROUTER_ENV_KEY,
