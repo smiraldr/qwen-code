@@ -29,18 +29,24 @@ describe('ionetProvider', () => {
     });
   });
 
-  it('exposes open-weight models with published context windows', () => {
+  it('exposes open-weight models with context windows from the endpoint catalog', () => {
     expect(ionetProvider.models).toEqual([
-      { id: 'deepseek-ai/DeepSeek-V4.1-Flash' },
-      { id: 'deepseek-ai/DeepSeek-V4-Pro' },
-      { id: 'zai-org/GLM-5.3' },
-      { id: 'moonshotai/Kimi-K3' },
+      { id: 'deepseek-ai/DeepSeek-V4.1-Flash', contextWindowSize: 262124 },
+      { id: 'deepseek-ai/DeepSeek-V4-Pro', contextWindowSize: 1048576 },
+      { id: 'zai-org/GLM-5.3', contextWindowSize: 262144 },
+      { id: 'moonshotai/Kimi-K3', contextWindowSize: 1048576 },
       { id: 'deepseek-ai/DeepSeek-V3.2', contextWindowSize: 163840 },
-      { id: 'zai-org/GLM-4.6', contextWindowSize: 200000 },
+      { id: 'zai-org/GLM-4.6', contextWindowSize: 131072 },
       { id: 'openai/gpt-oss-120b', contextWindowSize: 131072 },
-      { id: 'openai/gpt-oss-20b', contextWindowSize: 131072 },
-      { id: 'meta-llama/Llama-3.3-70B-Instruct', contextWindowSize: 131072 },
-      { id: 'moonshotai/Kimi-K2-Instruct-0905', contextWindowSize: 262144 },
+      { id: 'openai/gpt-oss-20b', contextWindowSize: 64000 },
+      {
+        id: 'meta-llama/Llama-3.3-70B-Instruct',
+        contextWindowSize: 128000,
+      },
+      {
+        id: 'moonshotai/Kimi-K2-Instruct-0905',
+        contextWindowSize: 262144,
+      },
     ]);
   });
 
@@ -95,7 +101,7 @@ describe('ionetProvider', () => {
       contextWindowSize: 131072,
     });
     expect(models?.[1]?.generationConfig).toEqual({
-      contextWindowSize: 200000,
+      contextWindowSize: 131072,
     });
     expect(models?.[2]).toMatchObject({
       id: 'deepseek-ai/DeepSeek-V4.1-Flash',

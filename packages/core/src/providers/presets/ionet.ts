@@ -19,20 +19,32 @@ export const ionetProvider: ProviderConfig = {
   envKey: IONET_ENV_KEY,
   // IO Intelligence serves an OpenAI-compatible API; the model catalog is
   // HF-style org/name and can change — users can edit the list in the setup
-  // UI (modelsEditable). Context windows are only listed where the model
-  // card publishes one.
+  // UI (modelsEditable). Context windows are taken from the endpoint's
+  // published catalog (GET /models).
   models: [
-    { id: 'deepseek-ai/DeepSeek-V4.1-Flash' },
-    { id: 'deepseek-ai/DeepSeek-V4-Pro' },
-    { id: 'zai-org/GLM-5.3' },
-    { id: 'moonshotai/Kimi-K3' },
+    {
+      id: 'deepseek-ai/DeepSeek-V4.1-Flash',
+      contextWindowSize: 262124,
+    },
+    {
+      id: 'deepseek-ai/DeepSeek-V4-Pro',
+      contextWindowSize: 1048576,
+    },
+    {
+      id: 'zai-org/GLM-5.3',
+      contextWindowSize: 262144,
+    },
+    {
+      id: 'moonshotai/Kimi-K3',
+      contextWindowSize: 1048576,
+    },
     {
       id: 'deepseek-ai/DeepSeek-V3.2',
       contextWindowSize: 163840,
     },
     {
       id: 'zai-org/GLM-4.6',
-      contextWindowSize: 200000,
+      contextWindowSize: 131072,
     },
     {
       id: 'openai/gpt-oss-120b',
@@ -40,11 +52,11 @@ export const ionetProvider: ProviderConfig = {
     },
     {
       id: 'openai/gpt-oss-20b',
-      contextWindowSize: 131072,
+      contextWindowSize: 64000,
     },
     {
       id: 'meta-llama/Llama-3.3-70B-Instruct',
-      contextWindowSize: 131072,
+      contextWindowSize: 128000,
     },
     {
       id: 'moonshotai/Kimi-K2-Instruct-0905',
